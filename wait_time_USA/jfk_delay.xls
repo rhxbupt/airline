@@ -1,0 +1,25 @@
+<B>Summary Statistics Origin Airport<B>  <BR>Origin Airport: New York, NY: John F. Kennedy International (JFK)<BR>Airline: JetBlue Airways (B6)<BR>Time Period: Monday, January 1, 2018 to Wednesday, January 31, 2018<br><BR><div>
+	<table cellspacing="0" cellpadding="4" rules="all" class="btsfont" Border="1" id="GridView1" style="border-width:2px;border-style:solid;width:850px;border-collapse:collapse;text-align:right;">
+		<tr style="background-color:#EFEFEF;">
+			<th align="center" rowspan="2" scope="col">Carriers</th><th align='center' colspan='4'>All Flights</th><th align='center' colspan='4'>Late Flights</th><th align="center" rowspan="2" scope="col">Total Number Cancelled</th><th align="center" rowspan="2" scope="col">Percent Flights Cancelled</th><th align="center" rowspan="2" scope="col">Total Number Diverted</th><th align="center" rowspan="2" scope="col">Percent Flights Diverted</th><th align="center" rowspan="2" scope="col">Percent Flights Late</th>
+		</tr><tr style="background-color:#EFEFEF;">
+			<th align="center" scope="col">Total Number</th><th align="center" scope="col">Average Departure Delay (minutes)</th><th align="center" scope="col">Average Taxi-Out (minutes)</th><th align="center" scope="col">Average Scheduled Departure to Take-off (minutes)</th><th align="center" scope="col">Total Number</th><th align="center" scope="col">Average Departure Delay (minutes)</th><th align="center" scope="col">Average Taxi-Out (minutes)</th><th align="center" scope="col">Average Scheduled Departure to Take-off (minutes)</th>
+		</tr><tr>
+			<td style="width:65px;">ALL*</td><td style="width:65px;">10,215</td><td style="width:65px;">16.43</td><td style="width:65px;">25.53</td><td style="width:65px;">15.38</td><td style="width:65px;">2,123</td><td style="width:65px;">84.32</td><td style="width:65px;">28.81</td><td style="width:65px;">37.00</td><td style="width:65px;">746</td><td style="width:65px;">7.30</td><td style="width:65px;">27</td><td style="width:65px;">0.26</td><td style="width:65px;">20.78</td>
+		</tr><tr>
+			<td style="width:65px;">B6</td><td style="width:65px;">3,395</td><td style="width:65px;">21.16</td><td style="width:65px;">23.79</td><td style="width:65px;">-14.89</td><td style="width:65px;">879</td><td style="width:65px;">84.50</td><td style="width:65px;">26.79</td><td style="width:65px;">-2.50</td><td style="width:65px;">237</td><td style="width:65px;">6.98</td><td style="width:65px;">10</td><td style="width:65px;">0.29</td><td style="width:65px;">25.89</td>
+		</tr>
+	</table>
+</div><BR><BR><div>
+	<table cellspacing="0" cellpadding="4" rules="all" class="btsfont" Border="1" id="GridView2" style="border-width:2px;border-style:solid;width:850px;border-collapse:collapse;text-align:right;">
+		<tr style="background-color:#EFEFEF;">
+			<th align="center" rowspan="2" scope="col">Carriers</th><th align="center" rowspan="2" scope="col">Total Flights</th><th align="center" rowspan="2" scope="col">Diverted Flights Reaching Scheduled Destination</th><th align='center' colspan='2'>Average Total Ground Time (minutes)</th><th align='center' colspan='5'>Cause of Delay at Destination (Average in minutes)</th>
+		</tr><tr style="background-color:#EFEFEF;">
+			<th align="center" scope="col">Diverted Flights</th><th align="center" scope="col">Cancelled Flights</th><th align="center" scope="col">Carrier</th><th align="center" scope="col">Weather</th><th align="center" scope="col">National Aviation System</th><th align="center" scope="col">Security</th><th align="center" scope="col">Late Aircraft Arrival</th>
+		</tr><tr>
+			<td style="width:65px;">ALL*</td><td style="width:65px;">10,215</td><td style="width:65px;">27</td><td style="width:65px;">28.79</td><td style="width:65px;">50.97</td><td style="width:65px;">34.70</td><td style="width:65px;">11.74</td><td style="width:65px;">16.47</td><td style="width:65px;">0.11</td><td style="width:65px;">22.61</td>
+		</tr><tr>
+			<td style="width:65px;">B6</td><td style="width:65px;">3,395</td><td style="width:65px;">10</td><td style="width:65px;">22.27</td><td style="width:65px;">47.08</td><td style="width:65px;">38.25</td><td style="width:65px;">6.57</td><td style="width:65px;">14.07</td><td style="width:65px;">0.20</td><td style="width:65px;">27.05</td>
+		</tr>
+	</table>
+</div><BR><BR><BR>* Average of all airlines operating at this airport. <BR><BR>SOURCE: Bureau of Transportation Statistics
