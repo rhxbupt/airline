@@ -468,9 +468,9 @@ def atl_function():
 	nx.draw(gATL, with_labels=True, **options)
 	plt.show()
 
-# draw("ATL")
+draw("ATL")
 # draw("whole_2")
-draw("whole")
+# draw("whole")
 # draw("LAX")
 # draw("CLT")
 # draw("ORD")
