@@ -30,23 +30,30 @@ graph = nx.Graph()
 
 min = 1000
 max = 1000
+
 for i in range(len(origin)):
 	if(distance[i] > max):
 		max = distance[i]
 	if(distance[i] < min):
 		min = distance[i]	
 
-print("MAX:", str(max))
-print("MIN:",str(min))		
 for i in range(len(origin)):
 	# g.add_edge(origin[i], destination[i])
 	dis = normal1(mi=min, mx=max, distance=distance[i])
-	if(origin[i] == 'LAX' or 'ATL' or 'CLT' or 'ORD' or 'DAL' or 'DEN' or 'JFK' or 'LAS' or 'SFO' or 'SEA'):
+	ori = origin[i]
+	# print(origin[i])
+
+	if ori == ('LAX' or 'ATL' or 'CLT' or 'ORD' or 'DAL' or 'DEN' or 'JFK' or 'LAS' or 'SFO' or 'SEA'):
 		for j in range(len(start)):
 			if(start[j] == origin[i]):
-				graph.add_weighted_edges_from([(origin[i], destination[i], dis+time[j])])
-	else:
-		graph.add_weighted_edges_from([(origin[i], destination[i], dis+0.05)])
+				graph.add_weighted_edges_from([(origin[i], destination[i], 4/3* dis+ 2/3*time[j])])
+				# graph.add_weighted_edges_from([(origin[i], destination[i], dis * 2)])
+				# print(dis+time[j])
+	else:  
+		graph.add_weighted_edges_from([(origin[i], destination[i], 4/3*dis+2/3*0.25)])
+		# graph.add_weighted_edges_from([(origin[i], destination[i], dis*2)])
+
+
 
 # 遍历图里每个edge
 # for n, nbrs in g.adj.items():
@@ -63,12 +70,6 @@ for i in range(len(origin)):
 # draw the whole graph
 # nx.draw(g, with_labels = True)
 
-# graph for LA
-gLA = nx.Graph()
-for i in range(len(origin)):
-	if(origin[i] == 'LAX'):
-		gLA.add_weighted_edges_from([(origin[i], destination[i], distance[i])])
-		# gLA.add_edge(origin[i], destination[i])
 
 # graph for whole_2
 g = nx.Graph()
@@ -76,12 +77,17 @@ for i in range(len(origin)):
 	g.add_weighted_edges_from([(origin[i], destination[i], distance[i])])
 		# gLA.add_edge(origin[i], destination[i])
 
+
+# graph for LA
+gLA = nx.Graph()
+for i in range(len(origin)):
+	if(origin[i] == 'LAX'):
+		gLA.add_weighted_edges_from([(origin[i], destination[i], distance[i])])
 # graph for ATL
 gATL = nx.Graph()
 for i in range(len(origin)):
 	if(origin[i] == 'ATL'):
 		gATL.add_weighted_edges_from([(origin[i], destination[i], distance[i])])
-		# gATL.add_edge(origin[i], destination[i])
 
 # graph for CLT
 gCLT = nx.Graph()
@@ -143,6 +149,9 @@ for i in range(len(origin)):
 def draw(str):
 	print('***********',str,'***********')
 
+	if(str == "ATL"):
+		atl_function()
+
 	if(str == "LAX"):
 		lax_function()
 	if(str == "CLT"):
@@ -176,6 +185,7 @@ def whole_function():
 	print("The degree centrality of LAS:"+str(graph_deg_cen['LAS']))
 	print("The degree centrality of SFO:"+str(graph_deg_cen['SFO']))
 	print("The degree centrality of SEA:"+str(graph_deg_cen['SEA']))
+	print("The degree centrality of ATL:"+str(graph_deg_cen['ATL']))
 	
 	LA_clo_cen = nx.closeness_centrality(graph,u='LAX',distance='weight')
 	CLT_clo_cen = nx.closeness_centrality(graph,u='CLT',distance='weight')
@@ -186,6 +196,7 @@ def whole_function():
 	LAS_clo_cen = nx.closeness_centrality(graph, u='LAS', distance='weight')
 	SFO_clo_cen = nx.closeness_centrality(graph, u='SFO', distance='weight')
 	SEA_clo_cen = nx.closeness_centrality(graph, u='SEA', distance='weight')
+	ATL_clo_cen = nx.closeness_centrality(graph, u='ATL', distance='weight')
 
 	print("The closeness centrality of LAX:"+str(LA_clo_cen))
 	print("The closeness centrality of CLT:"+str(CLT_clo_cen))
@@ -196,6 +207,7 @@ def whole_function():
 	print("The closeness centrality of LAS:"+str(LAS_clo_cen))
 	print("The closeness centrality of SFO:"+str(SFO_clo_cen))
 	print("The closeness centrality of SEA:"+str(SEA_clo_cen))
+	print("The closeness centrality of ATL:"+str(ATL_clo_cen))
 	
 	# x = list(nx.find_cliques(graph))
 	# x = list(nx.enumerate_all_cliques(graph))
@@ -221,6 +233,8 @@ def whole2_function():
 	print("The degree centrality of LAS:"+str(graph_deg_cen['LAS']))
 	print("The degree centrality of SFO:"+str(graph_deg_cen['SFO']))
 	print("The degree centrality of SEA:"+str(graph_deg_cen['SEA']))
+	print("The degree centrality of ATL:"+str(graph_deg_cen['ATL']))
+
 	
 	LA_clo_cen = nx.closeness_centrality(g,u='LAX',distance='weight')
 	CLT_clo_cen = nx.closeness_centrality(g,u='CLT',distance='weight')
@@ -231,6 +245,8 @@ def whole2_function():
 	LAS_clo_cen = nx.closeness_centrality(g, u='LAS', distance='weight')
 	SFO_clo_cen = nx.closeness_centrality(g, u='SFO', distance='weight')
 	SEA_clo_cen = nx.closeness_centrality(g, u='SEA', distance='weight')
+	ATL_clo_cen = nx.closeness_centrality(g, u='ATL', distance='weight')
+
 
 	print("The closeness centrality of LAX:"+str(LA_clo_cen))
 	print("The closeness centrality of CLT:"+str(CLT_clo_cen))
@@ -241,6 +257,7 @@ def whole2_function():
 	print("The closeness centrality of LAS:"+str(LAS_clo_cen))
 	print("The closeness centrality of SFO:"+str(SFO_clo_cen))
 	print("The closeness centrality of SEA:"+str(SEA_clo_cen))
+	print("The closeness centrality of ATL:"+str(ATL_clo_cen))
 	
 	# x = list(nx.find_cliques(graph))
 	# x = list(nx.enumerate_all_cliques(graph))
@@ -253,7 +270,7 @@ def whole2_function():
 	}
 	nx.draw(g, with_labels=True, **options)
 
-	plt.show()	
+	# plt.show()	
 
 def lax_function():
 	print(gLA.degree('LAX'))
@@ -434,8 +451,26 @@ def sea_function():
 	nx.draw(gSEA, with_labels=True, **options)
 	plt.show()
 
-draw("whole_2")
-# draw("whole")
+def atl_function():
+	# print(gSEA.degree('SEA'))
+	# SEA_deg_cen = nx.degree_centrality(gSEA)
+	# print("The degree centrality of SEA:"+str(SEA_deg_cen['SEA']))
+	# SEA_clo_cen = nx.closeness_centrality(gSEA, distance='weight')
+	
+	# print("The closeness centrality of SEA:"+str(SEA_clo_cen['SEA']))
+
+	# print(len(data[data.ORIGIN == 'SEA']))
+	# print(nx.info(gSEA))
+	options = {
+		'node_size': 10,
+		'width': 0.5,
+	}
+	nx.draw(gATL, with_labels=True, **options)
+	plt.show()
+
+# draw("ATL")
+# draw("whole_2")
+draw("whole")
 # draw("LAX")
 # draw("CLT")
 # draw("ORD")
